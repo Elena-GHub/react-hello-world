@@ -6,6 +6,14 @@ Repo where I will be uploading the files as I follow the course
 * Node 15.5.0
 * Yarn 1.22.5
 * IDE: VS Code
+
+### Lesson 16 onClick event fix
+In lesson 16 ("Las props en ReactJS"), due to changes in Node the onClick event to be applied to the image label did not work. The answer from another student (credits to Luis Donaldo) got me and other people out of this issue. The following line had to be removed in App.css from the App-logo class:  
+```
+pointer-events: none;
+```
+  
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

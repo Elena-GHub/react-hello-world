@@ -3,10 +3,11 @@ import logo from '../logo.svg';
 
 export default class Header extends Component {
     render() {
+        const { miau, handleClick } = this.props
         return (
             <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <h1 className="App-title">Bienvenid@s a React</h1>
+                <img onClick={handleClick} src={logo} className="App-logo" alt="logo" />
+                <h1 className="App-title">{miau}</h1>
             </header>
         )
     }
