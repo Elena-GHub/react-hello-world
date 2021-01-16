@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Header from './components/Header'
+import P from './components/P'
 import './App.css';
 
 class App extends Component {
@@ -20,9 +21,9 @@ class App extends Component {
     return (
       <div className="App">
           <Header miau={miau} handleClick={this.handleClick} />
-          <p onClick={this.changeStateText} className="App-intro">
-            {miau}
-          </p>
+          <P>
+            { miau }  
+          </P>         
       </div>
     )
   }
