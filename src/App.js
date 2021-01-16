@@ -3,19 +3,26 @@ import Header from './components/Header'
 import './App.css';
 
 class App extends Component {
+  state = {
+    miau: 'Welcome to miau'
+  }
+
+  changeStateText = () => {
+    this.setState({ miau: 'Hello World!'})
+  }
   handleClick = text => {
     console.log(text)
   }
   render() {
-    const miau = 'Welcome miau'
+    const { miau } = this.state
+    const text = 'Welcome miau'
     const guau = 'Welcome guau'
     return (
       <div className="App">
           <Header miau={miau} handleClick={this.handleClick} />
-          <Header miau={guau} handleClick={this.handleClick} />
-          <h3 className="App-intro">
-            Hello, World!
-          </h3>
+          <p onClick={this.changeStateText} className="App-intro">
+            {miau}
+          </p>
       </div>
     )
   }
