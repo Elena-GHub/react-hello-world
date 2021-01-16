@@ -21,7 +21,7 @@ class App extends Component {
     return (
       <div className="App">
           <Header miau={miau} handleClick={this.handleClick} />
-          <P>
+          <P onClick={this.changeStateText}>
             { miau }  
           </P>         
       </div>
