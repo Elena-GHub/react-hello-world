@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import logo from '../logo.svg';
 
 const styles = {
-    header: {
-        backgroundColor: '#282c34',
+    header: ({ backgroundColor }) => ({
+        backgroundColor,
         minHeight: '25vh',
         display: 'flex',
         flexDirection: 'column',
@@ -11,17 +11,24 @@ const styles = {
         justifyContent: 'center',
         fontSize: 'calc(10px + 2vmin)',
         color: 'white'
-    }
+    })
 }
 export default class Header extends Component {
+    state = {
+        backgroundColor: '#282c34',
+    }
+    changeHeaderColor = () => {
+        this.setState({ backgroundColor: '#008000'})
+    }
     handleClick = () => {
         const { handleClick, miau} = this.props
         handleClick(miau)
     }
     render() {
         const { miau, handleClick } = this.props
+        const { backgroundColor } = this.state
         return (
-            <header style={ styles.header }>
+            <header onClick={this.changeHeaderColor} style={ styles.header({ backgroundColor }) }>
                 <img onClick={this.handleClick} src={logo} className="App-logo" alt="logo" />
                 <h1 className="App-title">{miau}</h1>
             </header>
