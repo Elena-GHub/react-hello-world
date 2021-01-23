@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
+import SimpleForm from './components/SimpleForm'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-          Hello World!    
+        < SimpleForm />       
       </div>
     )
   }
