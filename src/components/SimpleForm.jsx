@@ -7,13 +7,18 @@ export default class SimpleForm extends Component {
         const { name, value } = target
         this.setState({ [name]: value })
     }
+    handleSubmit = e => {
+        e.preventDefault()
+        console.log('Prevented!', this.state)
+    }
 
     render() {
         console.log(this.state)
         return (
-            <form>
+            <form onSubmit={this.handleSubmit}>
                 <input name="firstName" onChange={this.handleChange} />
                 <input name="lastName" onChange={this.handleChange} />
+                <input type="submit" value="Send" />
             </form>
         )
     }
