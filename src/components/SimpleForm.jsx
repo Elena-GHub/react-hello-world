@@ -29,6 +29,7 @@ export default class SimpleForm extends Component {
         if (!Object.keys(result).length) {
             // Send form!!
             console.log('Valid form')
+            e.target.reset()
         }
     }
 
